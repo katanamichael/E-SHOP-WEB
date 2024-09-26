@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+#Lenovo{
+    border: 10px solid black;
+    width: 30%;
+    height: 30vh;
+}

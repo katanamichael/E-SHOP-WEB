@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase and Payment</title>
+    <link rel="stylesheet" href="Payment.css">
+</head>
+<body>
+    <div class="container">
+        <a class="active" href="Description.html">DESCRIPTION</a>
+        <a href="Basket.html" id="topTabs">SHOPPING BASKET</a>
+        <a href="Login.html" id="topTabs">LOG IN</a>
+        <a href="Payment.html" id="topTabs">STORE</a>
+        <a href="Payment.html" id="topTabs">PAYMENT & PURCHASES</a>
+        </div>
+        
+    <div class="PURCHASES">
+            <h2>Checkout Details</h2>
+            <a class="Confirmed">Fill out the required details to confirm your purchase</a>
+            <form>
+                <div><label>First Name</label>
+                <input type="text" name="first_name"></div>
+
+                <div><label>Last Name</label>
+                <input type="text" name="last_name"></div>
+
+                <div><label>Phone</label>
+                <input type="text" name="phone"></div>
+
+                <div><label>Email</label>
+                <input type="email" name="email"></div>
+
+                <div><label>Address</label>
+                <input type="text" name="address"></div>
+
+                <div><label>City</label>
+                <input type="text" name="city"></div>
+                
+            </form>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Subtotal: KSH 532,000</p>
+            <p>Shipping: KSH 2,500</p>
+            <p>Tax: KSH 500.00</p>
+            <hr>
+            <p>Total: <strong>KSH 534,000</strong></p>
+
+            <div class="payment-method">
+                <input type="radio" name="payment" checked>
+                <label>Mpesa</label>
+            </div>
+
+            <button>Place Order</button>
+
+        </div>
+    </div>
+</body>
+</html>

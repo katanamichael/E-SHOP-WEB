@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Basket</title>
+    <link rel="stylesheet" href="Basket.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="Volt Vibe Logo">
+        <h1>Volt Vibe</h1>
+    </div>
+    
+    <div class="basket-container">
+        <h1> <img src="cart.png" alt="Cart">Basket</h1>
+        <div class="basket-items">
+            <div class="item">
+                <img src="Lenovo.jpeg" alt="Lenovo Legion Slim 5 Gen 8">
+                <p>Lenovo Legion Slim 5 Gen 8</p>
+                <p>KSH 250,000</p>
+                <button>Remove</button>
+            </div>
+            <div class="item">
+                <img src="New S.jpeg" alt="Samsung a55">
+                <p>Samsung a55</p>
+                <p>KSH 42,000</p>
+                <button>Remove</button>
+            </div>
+            <div class="item">
+                <img src="Phone.png" alt="Samsung s23 Ultra">
+                <p>Samsung s23 Ultra</p>
+                <p>KSH 240,000</p>
+                <button>Remove</button>
+            </div>
+        </div>
+        <div class="basket-summary">
+            <h2>Order Summary</h2>
+            <p id="subtotal">Subtotal: KSH 0</p>
+            <p id="shipping">Shipping: KSH 2,500</p>
+            <p id="tax">Tax: KSH 500</p>
+            <hr>
+            <p id="total">Total: <strong>KSH 0</strong></p>
+            <button>Continue to Payment</button>
+        </div>
+
+        <script>
+            const shippingCost = 2500;
+            const taxCost = 500;
+    
+            // Function to calculate total cost
+            function calculateTotal() {
+                let subtotal = 0;
+                const items = document.querySelectorAll('.basket-items .item');
+                
+                items.forEach(item => {
+                    const price = parseInt(item.getAttribute('data-price'));
+                    subtotal += price;
+                });
+    
+                const total = subtotal + shippingCost + taxCost;
+    
+                // Update HTML content
+                document.getElementById('subtotal').textContent = `Subtotal: KSH ${subtotal.toLocaleString()}`;
+                document.getElementById('total').innerHTML = `Total: <strong>KSH ${total.toLocaleString()}</strong>`;
+            }
+    
+            // Function to remove an item
+            function removeItem(button) {
+                const item = button.closest('.item');
+                item.remove();
+                calculateTotal(); // Recalculate after removing the item
+            }
+    
+            // Call calculateTotal on page load
+            window.onload = calculateTotal;
+        </script>
+    </div>
+</body>
+</html>
